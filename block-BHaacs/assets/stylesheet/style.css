@@ -86,7 +86,7 @@ a {
 .heading-hero {
     font-size: 4.2rem;
     font-weight: 700;
-    width: 70%;
+    width: 40rem;
     margin: 0 auto;
     margin-top: 12rem;
     color:#fff;
@@ -99,7 +99,7 @@ a {
     font-size: 2.5rem;
     color: var(--secondary);  
     text-transform: capitalize;
-    width: 40%;
+    width: 30rem;
     text-align: center;  
     margin-bottom: 2rem;
 }
@@ -107,7 +107,7 @@ a {
     color: var(--secondary);
     font-size: 2.5rem;
     font-weight: 600;
-    width: 90%;
+    width: 30rem;
     text-transform: capitalize;
 }
 .heading-table {
@@ -287,17 +287,27 @@ a {
 .navbar nav a:hover {
     color: var(--secondary);
 }
-#toggle, .bars {
+#toggle, .bars, .close {
     display: none;
 }
 /* ******************* Hero Section *******************************/
 .hero {
     text-align: center;
-    background: linear-gradient(to bottom, var(--primary) 77%, #fff 77% 80%);    
+    background: linear-gradient(to bottom, var(--primary) 67%, #fff 67% 80%);    
     padding-bottom: 5rem;
 }
 .hero-img {
     margin-top: -6rem;
+    z-index: 2;
+}
+.shadow {
+    height: 10rem;
+    background-color: red;
+    width: 30%;
+    position: absolute;
+    bottom: 0rem;
+    z-index: 1;
+    box-shadow: 1px 1px 100px 40px rgb(190, 187, 187);
 }
 
 /* ******************* Files Section *********************************/
@@ -354,6 +364,7 @@ th {
     font-weight: 600;
     font-size: 1.5rem;
     color: #fff;
+    border: 1px solid #3D9EA1;
 }
 td {
     width: 25%;
@@ -522,6 +533,7 @@ address {
 }
 
 /* ************************* @ Media Queries ********************************* */
+
 @media screen and (max-width: 1200px) {
     .container {
         max-width: 1140px;
@@ -546,6 +558,19 @@ address {
     }
     .sm-align-center {
         text-align: center;
+    }
+    .heading-article, 
+    .heading-hero,
+    .heading-plans
+    .heading-section
+    .heading-try-now
+     {
+        width: 100%;
+        text-align: center;
+        font-size: 2rem;
+    }
+    .heading-article {
+        text-align: left;
     }
     /********* Flex **********/
     .sm-flex {
@@ -574,10 +599,15 @@ address {
         flex-wrap: wrap;
     }
     /********** Hamburger Menu **************/
-    .bars, .brand {
+    .bars, .brand, .close {
         position: fixed;
         top: 2rem;
         z-index: 10;
+    }
+    .close {
+        display: none;
+        right: 4rem;
+        top: 4rem;
     }
     .brand {
         left: 4rem;
@@ -604,17 +634,27 @@ address {
         padding-bottom: 2rem;
         font-size: 3rem;
     }
-    #toggle:checked ~ .nav {
+    #toggle:checked ~ .nav, #toggle:checked ~ .close {
          display: inline-block;         
     }
+    #toggle:checked ~ .bars {
+        display: none;         
+   }
     .fa-bars {
         font-size: 2.5rem;
     }  
+    .fa-window-close {
+        font-size: 3rem;
+    }
     .navbar {
         background-color: rgba(89, 191, 194, 0.9);
         height: 6rem;
         position:fixed; 
-        z-index: 7
+        z-index: 7;
+    }
+    /*********** Hero section ***************/
+    .shadow {
+        display: none;
     }
     /********* Statistics Section **********/
     .img-graph {
