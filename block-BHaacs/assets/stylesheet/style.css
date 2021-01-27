@@ -1,0 +1,733 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/****************** Custom Styles begins here ********************/
+/* Variables */
+:root {
+    --primary: #59BFC2;
+    --secondary: #293E7D;
+    --lightText: #677CAB;
+}
+html {
+    font-size: 16px;
+}
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem; 
+}
+.padding {
+    padding: 5rem 0;
+} 
+img {
+    max-width: 100%;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+/********************** Headings ******************************/
+.heading-hero {
+    font-size: 4.2rem;
+    font-weight: 700;
+    width: 40rem;
+    margin: 0 auto;
+    margin-top: 12rem;
+    color:#fff;
+    line-height: 1.2;
+    text-transform: capitalize;
+    margin-bottom: 2rem;
+}
+.heading-section {
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: var(--secondary);  
+    text-transform: capitalize;
+    width: 30rem;
+    text-align: center;  
+    margin-bottom: 2rem;
+}
+.heading-article {
+    color: var(--secondary);
+    font-size: 2.5rem;
+    font-weight: 600;
+    width: 30rem;
+    text-transform: capitalize;
+}
+.heading-table {
+    color: var(--secondary);
+    font-weight: 700;
+    font-size: 3rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+.heading-plans {
+    color: var(--secondary);
+    font-weight: 700;
+    font-size: 3rem;
+    text-transform: capitalize;
+    text-align: center;
+}
+.heading-try-now {
+    color:#fff;
+    font-size: 2.5rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+.heading-footer, .heading-brand-footer {
+    color: var(--secondary);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.heading-brand-footer {
+    font-size: 2.3rem;
+    margin-bottom: 0.5rem;
+}
+
+/********************** Flex **********************************/
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+.flex-column {
+    flex-direction: column;
+}
+.wrap {
+    flex-wrap: wrap;
+}
+.flex-center {
+    align-items: center;
+}
+.flex-start {
+    align-self: start;
+}    
+.flex-end {
+    justify-content: flex-end;
+}
+.flex-20 {
+    flex : 0 1 20%;
+}
+.flex-35 {
+    flex : 0 1 35%;
+}
+.flex-45 {
+    flex : 0 1 45%;
+}
+.flex-48 {
+    flex: 0 1 48%;
+}
+.center {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+/********************* Button ***********************************/
+.btn-hero {
+    padding: 1.3rem 3.5rem;
+    color: var(--secondary);
+    font-weight: 600;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    background-color: #fff;
+    display: inline-block; 
+    text-transform: capitalize;
+    font-weight: 700;
+    position:relative;
+    z-index: 1;   
+    border: 2px solid #fff; 
+}
+.btn-hero:hover {
+    color: #fff;
+    background-color: #3B82F6;
+    background: linear-gradient(var(--lightText) 50%, var(--secondary) 90%);
+}
+.btn-unique {
+    color: #fff;
+    background-color: var(--primary);
+    padding: 0.5rem 3rem;
+    padding-right: 2rem;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 1.7rem;
+    text-transform: capitalize;
+    position:relative;
+}
+.btn-unique:before, .btn-unique:after {    
+    content:'';
+    border-top: 1.75rem solid transparent;
+    border-bottom: 1.75rem solid transparent;
+    display: inline-block;
+    position:absolute;
+    top: 0;
+}
+.btn-unique:before {
+    border-left: 1.75rem solid #fff;   
+    left: 0;
+}
+.btn-unique:after {
+    border-left: 1.75rem solid var(--primary);
+    right: -1.75rem;
+} 
+.btn-unique:hover {
+    background-color: #3B82F6;
+}
+.btn-unique:hover:after {
+    content: '';
+    border-left: 1.75rem solid #3B82F6;
+}
+
+.btn-secondary {
+    background-color: #fff;
+    color: var(--secondary);
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 1.5rem;
+    padding: 1rem;
+    border: 2px solid #C7D4F1;
+    align-self: stretch;
+    text-align: center;
+    border-radius: 0.5rem;
+}
+.btn-secondary:hover {
+    background-color: var(--primary);
+    color: #fff;
+    border: 2px solid var(--primary);
+}
+.btn-try-now {
+    align-self: center;
+    padding: 1rem 6rem;
+    border: 2px solid #fff;
+}
+.btn-try-now:hover {
+    background-color: var(--lightText);
+    background: linear-gradient(var(--lightText) 50%, var(--secondary) 90%);
+    color: #fff;
+    border: 2px solid #fff; 
+}
+
+/* ******************* Header ***********************************/
+.navbar {
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    padding: 1rem;
+}
+.brand {
+    font-size: 2rem;
+    font-weight: 700;    
+    color: #fff;
+}
+.navbar li {
+    font-size: 1.2rem;
+    margin-left: 2rem;
+    font-weight: 600;
+}
+.navbar a {
+    color: #fff;
+}
+.navbar nav a:hover {
+    color: var(--secondary);
+}
+#toggle, .bars, .close {
+    display: none;
+}
+/* ******************* Hero Section *******************************/
+.hero {
+    text-align: center;
+    background: linear-gradient(to bottom, var(--primary) 67%, #fff 67% 80%);    
+    padding-bottom: 5rem;
+}
+.hero-img {
+    margin-top: -6rem;
+    z-index: 2;
+}
+.shadow {
+    height: 10rem;
+    background-color: red;
+    width: 30%;
+    position: absolute;
+    bottom: 0rem;
+    z-index: 1;
+    box-shadow: 1px 1px 100px 40px rgb(190, 187, 187);
+}
+
+/* ******************* Files Section *********************************/
+.files {
+    border-bottom: 0.2rem solid #BFD1F6;
+}
+
+.files a {
+    color: #BDC8E0;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 2.5rem;
+    margin-right: 1.4rem;
+} 
+.files a:hover{
+    color: #93a5c0;
+}
+a[href$=".pdf"]::before {
+    content: url("../media/pdf.png");
+    margin-right: 1rem;
+}
+a[href$=".doc"]::before {
+    content: url("../media/word.png");
+    margin-right: 1rem;
+}
+a[href$=".png"]::before {
+    content: url("../media/image.png");
+    margin-right: 1rem;
+}
+a[href$=".mp4"]::before {
+    content: url("../media/video.png");
+    margin-right: 1rem;
+}
+
+
+/*********************** Statistics Section ************************/
+.para-article {
+    color: var(--lightText);
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+/************************* Table Section **************************/
+table {
+    margin: 2rem auto 0 auto;
+    width: 100%;
+}
+thead {
+    background-color: #3D9EA1;
+}
+th {                                        
+    text-align: left;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #fff;
+    border: 1px solid #3D9EA1;
+}
+td {
+    width: 25%;
+    padding: 1rem;
+}
+tr td {
+    border: 1px solid #cbcbcb;
+    color: #696C73;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+tr:nth-child(2n) {
+    background-color: #D5E5E5;
+}
+.first-th{
+    border-top-left-radius: 1rem;
+}
+.last-th {
+    border-top-right-radius: 1rem;
+}
+
+/************************* Plans Section **************************/
+.plans-heading {
+    margin-bottom: 4rem;
+}
+.toggle {
+    width: 6rem;
+    height: 3rem;
+    background-color: #BBECEC;
+    border-radius: 4rem;
+    cursor: pointer;
+}
+.circle-toggle{
+    justify-content: flex-start;
+}
+.circle {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #59BFC2;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    margin: 0.5rem;
+}
+.before {
+    margin-right: 1rem;   
+    color: #0F1A3A; 
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.after {
+    margin-left: 1rem;
+    color: #0F1A3A; 
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.basic, .more-popular {
+    border : 6px solid #E8EEFB; 
+    border-radius: 1rem;
+    padding: 3rem;
+}
+.plan-para {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--lightText);
+    margin-top: 2rem;
+    text-align: center;
+}
+.price{
+    font-size: 4rem;
+    color: var(--primary);
+    font-weight: 600;
+    width: 100%;
+    border-bottom: 2px solid #E8EEFB;
+    text-align: center;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+}
+.price::before {
+    content: "$";
+    color: var(--primary);
+    font-size: 2rem;
+    margin-left: 0.5rem;
+    font-weight: 600;
+}
+.price::after {
+    content: "/Month";
+    color: var(--lightText);
+    font-size: 1.3rem;
+    margin-right: 1rem;
+    font-weight: 600;
+}
+.features-list {
+    align-self: start;
+    margin-bottom: 2rem;    
+}
+.features-list li {
+    padding: 1rem;
+    color: var(--secondary);
+    margin-left: 2rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    list-style-image: url("../media/tick.png");
+}
+.features-list .disable {
+    color: var(--lightText);
+    list-style-image: url("../media/cross.png");
+}
+
+/************************* Try-Now Section **************************/
+.try-now {
+    background-color: var(--primary);
+    padding: 6rem;
+    border-radius: 3rem;   
+}
+/****************************** Footer *****************************/
+.social {
+    justify-content: flex-start;
+}
+.footer .email, .footer li a, .footer li, address {
+    color: var(--lightText);
+}
+address, footer li{
+    font-size: 1.4rem;
+    font-weight: 500;    
+}
+address {
+    padding-right: 10rem;
+    margin-bottom: 1rem;
+}
+.facebook, .twitter, .insta {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: var(--primary);
+    margin-right: 2rem;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.facebook:hover, .twitter:hover, .insta:hover {
+    color: var(--primary);
+    background-color: #fff;
+    border: 1px solid var(--primary);
+}
+.features a:hover, .support a:hover {
+    color: var(--secondary);
+}
+
+.email:link {
+    color: var(--primary);
+}
+.email:visited {
+    color:red;
+}
+
+.email:focus {
+    color: yellow;    
+}
+.email:active {
+    color: pink;
+}
+
+/* ************************* @ Media Queries ********************************* */
+
+@media screen and (max-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+@media screen and (max-width: 992px) {
+    html {
+        font-size: 14px;
+    }
+    .container {
+        max-width: 960px;
+        width:100%;
+    }
+}
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 12px;
+    }
+    .container {
+        max-width: 720px;
+        width: 100%;
+    }
+    .sm-align-center {
+        text-align: center;
+    }
+    .heading-article, 
+    .heading-hero,
+    .heading-plans
+    .heading-section
+    .heading-try-now
+     {
+        width: 100%;
+        text-align: center;
+        font-size: 2rem;
+    }
+    .heading-article {
+        text-align: left;
+    }
+    /********* Flex **********/
+    .sm-flex {
+        display: flex;
+        justify-content: center;
+    }
+    .sm-wrap {
+        flex-wrap: wrap;
+    }
+    .sm-row {
+        flex-direction: row;
+    }
+    .sm-column {
+        flex-direction: column;
+    }
+    .sm-flex-start {
+        justify-content: flex-start;
+    }
+    .sm-column-reverse {
+        flex-direction: column-reverse;
+    }
+    .sm-center {
+        align-items: center;
+    }
+    .sm-wrap {
+        flex-wrap: wrap;
+    }
+    /********** Hamburger Menu **************/
+    .bars, .brand, .close {
+        position: fixed;
+        top: 2rem;
+        z-index: 10;
+    }
+    .close {
+        display: none;
+        right: 4rem;
+        top: 4rem;
+    }
+    .brand {
+        left: 4rem;
+    }
+    .bars {
+        display: inline-block;
+        right: 4rem
+    }
+    .nav {
+         display: none; 
+         position: fixed;
+         top:0;
+         left: 0;
+         right: 0;
+         bottom:0;
+         background-color: rgba(89, 191, 194, 0.9);
+         height: 100vh;
+         color:#fff;
+         z-index:5;
+         text-align: center;
+         padding-top: 24rem;
+    }
+    .nav li {
+        padding-bottom: 2rem;
+        font-size: 3rem;
+    }
+    #toggle:checked ~ .nav, #toggle:checked ~ .close {
+         display: inline-block;         
+    }
+    #toggle:checked ~ .bars {
+        display: none;         
+   }
+    .fa-bars {
+        font-size: 2.5rem;
+    }  
+    .fa-window-close {
+        font-size: 3rem;
+    }
+    .navbar {
+        background-color: rgba(89, 191, 194, 0.9);
+        height: 6rem;
+        position:fixed; 
+        z-index: 7;
+    }
+    /*********** Hero section ***************/
+    .shadow {
+        display: none;
+    }
+    /********* Statistics Section **********/
+    .img-graph {
+        margin-bottom: 2rem;
+    }
+    .para-article {
+        margin: 1.25rem 0;
+    }
+    .img-graph {
+        flex: 0 1 100%;
+    }
+    /********* Table Section **********/
+    th {
+        display: none;
+    }
+    tr {
+        display:flex;
+        flex-direction:column;
+        justify-content: center;
+        text-align: center;
+    }
+    td:first-child:before, 
+    td:nth-child(2)::before, 
+    td:nth-child(3)::before,
+    td:last-child::before {
+        content: "Day: ";
+        font-weight: 700;
+        margin-right: 0.5rem;
+    }
+    td:nth-child(2)::before {
+        content: "Course: ";
+    }
+    td:nth-child(3)::before {
+        content: "Score (0-100): ";
+    }
+    td:last-child::before {
+        content: "Hour Spent: ";
+    } 
+    td {
+        width: 100%;
+    }
+    /********* Files Section **********/  
+    .files a {
+        margin-bottom: 1rem;
+    }
+    /********* Plans Section **********/  
+     .basic {
+        margin-bottom: 2rem;
+    }
+    /********* Try-now Section **********/ 
+    .try-now {
+        width: 95%;
+        margin: 0 auto;
+    }
+    /********* Footer **********/
+    address {
+        margin: 0 20%;
+        padding-right: 0;        
+    }
+    .social, .support {
+        margin: 2rem 0;
+    }
+    .support li, .features li {
+        margin-right: 2rem;
+    }
+
+}
+@media screen and (max-width: 576px) {
+    html {
+        font-size: px;
+    }
+    .container {    
+        max-width: 540px;
+    }
+}
+
